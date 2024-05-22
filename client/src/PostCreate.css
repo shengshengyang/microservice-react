@@ -1,0 +1,29 @@
+/* PostCreate.css */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fafafa;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    padding: 0.5rem;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+}
+
+.btn-primary {
+    padding: 0.5rem;
+    background-color: #0095f6;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
