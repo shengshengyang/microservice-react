@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import PostCreate from './PostCreate';
+import PostList from "./PostList";
 
 function App() {
     return (
@@ -10,6 +11,7 @@ function App() {
                 <h2>blog page</h2>
             </header>
             <PostCreate/>
+            <PostList/>
         </div>
     );
 }
