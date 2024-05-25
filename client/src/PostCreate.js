@@ -21,11 +21,11 @@ const PostCreate = () => {
             <form onSubmit={onSubmit}>
                 <div className="form-group">
                     <label>標題</label>
-                    <input type="text" value={title} onChange={e => (setTitle(e.target.value))} className="form-control"
+                    <input type="text" value={title}   onChange={(e) => setTitle(e.target.value)} className="form-control"
                            placeholder="標題"/>
                 </div>
                 <button type="submit" className="btn btn-primary">
-                    Submit
+                    送出
                 </button>
             </form>
         </div>

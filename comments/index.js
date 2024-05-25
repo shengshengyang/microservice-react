@@ -3,10 +3,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const {randomBytes} = require('crypto');
+const cors = require('cors');
 
 const app = express();
 
-const cors = require('cors');
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -23,7 +23,7 @@ app.post('/posts/:id/comments', (req, res) => {
     const comments = commentsByPostId[req.params.id] || [];
     comments.push({id: commentId, content});
     commentsByPostId[req.params.id] = comments;
-
+    console.log(comments)
     res.status(201).send(comments);
 });
 
