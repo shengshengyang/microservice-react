@@ -5,8 +5,6 @@ const cors = require('cors');
 const axios = require('axios');
 
 const app = express();
-
-
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -30,8 +28,7 @@ app.post('/posts/:id/comments', async (req, res) => {
             content,
             postId: req.params.id
         }
-    }).then(r => console.log(r.data))
-        .catch(e => console.log(e));
+    }).then(r => console.log(r.data)).catch(e => console.log(e));
     res.status(201).send(comments);
 });
 
