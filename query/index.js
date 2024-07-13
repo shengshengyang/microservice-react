@@ -33,8 +33,6 @@ const handleEvent = (type, data) => {
         comment.status = status;
         comment.content = content;
     }
-
-    console.log(posts);
 }
 
 app.get('/posts', (req, res) => {
@@ -51,11 +49,16 @@ app.post('/events', (req, res) => {
 
 app.listen(4002, async () => {
     console.log('Listening on 4002');
-    const res = await axios.get('http://localhost:4005/events');
+    try {
+        const res = await axios.get('http://localhost:4005/events');
 
-    for (let event of res.data) {
-        console.log('Processing event:', event.type);
+        for (let event of res.data) {
+            console.log('Processing event:', event.type);
 
-        handleEvent(event.type, event.data);
+            handleEvent(event.type, event.data);
+        }
+    }catch (e) {
+        console.log(e.message);
     }
+
 });

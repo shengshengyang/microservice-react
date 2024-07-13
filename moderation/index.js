@@ -8,7 +8,6 @@ app.use(bodyParser.json());
 app.post('/events', async (req, res) => {
     const {type, data} = req.body;
 
-    console.log('Received Event', type);
 
     if (type === 'CommentCreated') {
         // this is a simple logic to determine the status of the comment
@@ -26,9 +25,7 @@ app.post('/events', async (req, res) => {
         });
     }
 
-    res.send({
-        status: 'OK'
-    })
+    res.send({})
 });
 
 app.listen(4003,  () => {
